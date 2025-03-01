@@ -1,0 +1,20 @@
+@URL=https://localhost:44356/api/
+### GET Movies
+GET {{URL}}Movies
+Accept: application/json
+
+### GET Movie By Id
+GET {{URL}}Movies/1
+Accept: application/json
+
+### Create Movie
+POST {{URL}}Movies
+Content-Type: application/json
+
+{
+  "title": "Another Movie",
+  "year": 2025,
+  "rate": 4.5,
+  "description": "This is first film title",
+  "genreId": 1
+}

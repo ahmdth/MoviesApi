@@ -17,5 +17,6 @@ namespace MoviesApi.Models
         public int GenreId { get; set; }
         public Genre Genre { get; set; }
         public string Poster { get; set; }
+        public List<Actor> Actors { get; set; } = new();
     }
 }

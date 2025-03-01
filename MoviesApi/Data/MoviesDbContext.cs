@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MoviesApi.Dtos;
 using MoviesApi.Models;
 
@@ -24,5 +24,6 @@ namespace MoviesApi.Data
                 new Genre { Id = 10, Name = "Fantasy", Description = "Fantasy description" }
             );
         }
+        public DbSet<MoviesApi.Models.Actor> Actor { get; set; } = default!;
     }
 }

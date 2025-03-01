@@ -43,7 +43,8 @@ public class MoviesController(MoviesDbContext context, IWebHostEnvironment hosti
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create([FromForm, Bind("Title,Year,Rate,Description,GenreId")] MovieDto movie)
+    [Route("/")]
+    public async Task<IActionResult> Create([FromBody, Bind("Title,Year,Rate,Description,GenreId,Poster")] MovieDto movie)
     {
         var genre = await context.Genres.AnyAsync(g => g.Id == movie.GenreId);
         if (!genre)
@@ -73,7 +74,7 @@ public class MoviesController(MoviesDbContext context, IWebHostEnvironment hosti
         var m = new Movie
         {
             Title = movie.Title,
-            Description = movie.Title,
+            Description = movie.Description,
             Rate = movie.Rate,
             Year = movie.Year,
             GenreId = movie.GenreId,
